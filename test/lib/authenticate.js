@@ -15,6 +15,18 @@ test('Should throw Boom error if environment variables are not set', (t) => {
   }
 })
 
+test('Should throw Boom error if authorization does not contain a token', (t) => {
+  t.plan(1)
+  process.env.JWT_AUDIENCE = 'this is my audience'
+  process.env.JWT_ISSUER = 'this is my issuer'
+  process.env.JWT_SECRET = 'this is my secret'
+  try {
+    lib('')
+  } catch (err) {
+    t.deepEqual(err, Boom.unauthorized('Please provider the correct authentication credentials', 'Bearer'))
+  }
+})
+
 test('Should resolve with payload', (t) => {
   process.env.JWT_AUDIENCE = 'this is my audience'
   process.env.JWT_ISSUER = 'this is my issuer'
@@ -48,7 +60,7 @@ test('Should reject if secret is incorrect', (t) => {
     .catch((err) => t.deepEqual(err.output.payload.attributes, {
       name: 'JsonWebTokenError',
       message: 'invalid signature',
-      error: 'You do not have access to this service'
+      error: 'Please provider the correct authentication credentials'
     }))
 })
 
@@ -66,7 +78,7 @@ test('Should reject if audience is incorrect', (t) => {
     .catch((err) => t.deepEqual(err.output.payload.attributes, {
       name: 'JsonWebTokenError',
       message: 'jwt audience invalid. expected: this is my audience',
-      error: 'You do not have access to this service'
+      error: 'Please provider the correct authentication credentials'
     }))
 })
 
@@ -84,6 +96,6 @@ test('Should reject if issuer is incorrect', (t) => {
     .catch((err) => t.deepEqual(err.output.payload.attributes, {
       name: 'JsonWebTokenError',
       message: 'jwt issuer invalid. expected: this is my issuer',
-      error: 'You do not have access to this service'
+      error: 'Please provider the correct authentication credentials'
     }))
 })
