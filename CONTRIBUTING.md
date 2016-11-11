@@ -62,8 +62,8 @@ By contributing you agree to the [LICENSE](LICENSE) of this repository.
 ## Code Style and Code Quality
 
 -   adhere to our code style guides
-s
--   [![js-semistandard-style](https://cdn.rawgit.com/flet/semistandard/master/badge.svg)](https://github.com/Flet/semistandard)
+
+[![js-standard-style](https://cdn.rawgit.com/flet/standard/master/badge.svg)](https://github.com/Flet/standard)
 
 -   run `npm test` to ensure your changes follow our coding standards and pass our existing tests
 
