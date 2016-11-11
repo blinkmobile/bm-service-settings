@@ -1,0 +1,9 @@
+{
+  "cors": true,
+  "routes": [
+    {
+      "route": "/v1/settings",
+      "module": "./lib/api/settings.js"
+    }
+  ]
+}

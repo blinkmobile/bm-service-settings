@@ -1,0 +1,6 @@
+{
+  "server": {
+    "project": "bm-service-settings.blinkm.io",
+    "region": "ap-southeast-2"
+  }
+}

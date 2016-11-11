@@ -1,12 +1,15 @@
 {
   "name": "bm-service-settings",
-  "description": "Provides settings to BlinkMobile services",
+  "description": "Provides settings for BlinkMobile services.",
   "version": "0.0.1",
   "author": "Matt Carroll <matt@blinkmobile.com.au> (https://github.com/mymattcarroll)",
   "bugs": {
     "url": "https://github.com/blinkmobile/bm-service-settings/issues"
   },
   "dependencies": {
+    "boom": "4.2.0",
+    "dotenv": "2.0.0",
+    "jsonwebtoken": "7.1.9"
   },
   "devDependencies": {
     "ava": "^0.16.0",
@@ -30,6 +33,7 @@
   "homepage": "https://github.com/blinkmobile/bm-service-settings#readme",
   "keywords": [],
   "license": "MIT",
+  "main": "bm-server.json",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blinkmobile/bm-service-settings.git"
