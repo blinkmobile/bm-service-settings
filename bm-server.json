@@ -3,7 +3,7 @@
   "routes": [
     {
       "route": "/v1/settings",
-      "module": "./lib/api/settings.js"
+      "module": "./api/v1/settings.js"
     }
   ]
 }
