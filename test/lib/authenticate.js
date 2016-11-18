@@ -23,7 +23,7 @@ test('Should throw Boom error if authorization does not contain a token', (t) =>
   try {
     lib('')
   } catch (err) {
-    t.deepEqual(err, Boom.unauthorized('Please provider the correct authentication credentials', 'Bearer'))
+    t.deepEqual(err, Boom.unauthorized('Please provide the correct authentication credentials', 'Bearer'))
   }
 })
 
@@ -60,7 +60,7 @@ test('Should reject if secret is incorrect', (t) => {
     .catch((err) => t.deepEqual(err.output.payload.attributes, {
       name: 'JsonWebTokenError',
       message: 'invalid signature',
-      error: 'Please provider the correct authentication credentials'
+      error: 'Please provide the correct authentication credentials'
     }))
 })
 
@@ -78,7 +78,7 @@ test('Should reject if audience is incorrect', (t) => {
     .catch((err) => t.deepEqual(err.output.payload.attributes, {
       name: 'JsonWebTokenError',
       message: 'jwt audience invalid. expected: this is my audience',
-      error: 'Please provider the correct authentication credentials'
+      error: 'Please provide the correct authentication credentials'
     }))
 })
 
@@ -96,6 +96,6 @@ test('Should reject if issuer is incorrect', (t) => {
     .catch((err) => t.deepEqual(err.output.payload.attributes, {
       name: 'JsonWebTokenError',
       message: 'jwt issuer invalid. expected: this is my issuer',
-      error: 'Please provider the correct authentication credentials'
+      error: 'Please provide the correct authentication credentials'
     }))
 })
