@@ -26,7 +26,7 @@ export type JWTPayload = {
 
 export type ServerCLISettings = {
   bucket: string,
-  deploymentUrl: string,
-  region: string
+  region: string,
+  serviceOrigin: string
 }
 */

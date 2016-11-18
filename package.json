@@ -33,7 +33,6 @@
   "homepage": "https://github.com/blinkmobile/bm-service-settings#readme",
   "keywords": [],
   "license": "MIT",
-  "main": "bm-server.json",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blinkmobile/bm-service-settings.git"
