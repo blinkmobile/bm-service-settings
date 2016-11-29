@@ -10,7 +10,7 @@ const PROJECT_NAME = 'valid project name'
 const PROJECT = {
   service: {
     details: {
-      bucket: 'valid bucket name',
+      deployS3Bucket: 'valid bucket name',
       origin: 'valid origin'
     }
   }
@@ -53,7 +53,7 @@ test('Should pass correct arguments to request.get() and resolve to settings', (
 
   return lib(PROJECT_NAME)
     .then((settings) => t.deepEqual(settings, {
-      bucket: PROJECT.service.details.bucket,
+      bucket: PROJECT.service.details.deployS3Bucket,
       serviceOrigin: PROJECT.service.details.origin
     }))
 })
