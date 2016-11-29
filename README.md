@@ -24,6 +24,8 @@ Request query string should encode the following key-value pair:
 
    -   _@blinkmobile/server-cli_
 
+-   **bmProject**: _optional_ The BlinkMobile project name to get settings for
+
 ## Environment Variables
 
 Environment variables are set using [dotenv](https://www.npmjs.com/package/dotenv).
@@ -49,13 +51,9 @@ JWT_SECRET="secret"
 
 -   **JWT_SECRET**: Base64 secret used to sign JWT, verify their signatures
 
-### Server CLI
+### Project Registry
 
--   **SERVER_CLI_BUCKET**: "Bucket" option used when uploading projects
-
--   **SERVER_CLI_REGION**: "region" option used for AWS S3 requests
-
--   **SERVER_CLI_SERVICE_ORIGIN**: Origin for the service to call when deploying projects
+-   **PROJECT_REGISTRY_ORIGIN**: Origin for the project registry to call for project information
 
 ## Deployment
 
