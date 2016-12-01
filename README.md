@@ -55,6 +55,8 @@ JWT_SECRET="secret"
 
 -   **PROJECT_REGISTRY_ORIGIN**: Origin for the project registry to call for project information
 
+-   **PROJECT_REGISTRY_SECRET**: Secret to pass to the project registry for authentication
+
 ## Deployment
 
 This project uses the BlinkMobile Server CLI tool for deployment
