@@ -1,6 +1,6 @@
 {
   "server": {
-    "project": "bm-settings-service.api.blinkm.io",
+    "project": "bm-service-settings.api.blinkm.io",
     "region": "ap-southeast-2",
     "cors": true,
     "routes": [
