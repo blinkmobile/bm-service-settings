@@ -12,8 +12,13 @@ export type BmRequest = {
     params: { [id:string]: string },
     pathname: string,
     protocol: 'http:' | 'https:',
-    query: { [id:string]: string }
+    query: SettingsQuery
   }
+}
+
+export type SettingsQuery = {
+  bmService?: string,
+  bmProject?: string
 }
 
 export type JWTPayload = {
@@ -26,7 +31,6 @@ export type JWTPayload = {
 
 export type ServerCLISettings = {
   bucket: string,
-  region: string,
   serviceOrigin: string
 }
 */

@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "id": "10",
+      "type": "projects",
+      "attributes": {
+        "name": "bm-service-settings.api.blinkm.io"
+      },
+      "relationships": {
+        "service": {
+          "data": {
+            "id": "11",
+            "type": "services"
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "id": "11",
+      "type": "services",
+      "attributes": {
+        "awsS3Bucket": "bucket name",
+        "origin": "origin"
+      },
+      "relationships": {
+      }
+    }
+  ]
+}

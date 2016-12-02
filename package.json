@@ -9,21 +9,23 @@
   "dependencies": {
     "boom": "4.2.0",
     "dotenv": "2.0.0",
-    "jsonwebtoken": "7.1.9"
+    "jsonapi-datastore": "0.4.0-beta",
+    "jsonwebtoken": "7.1.9",
+    "request": "2.79.0"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
-    "eslint": "^3.9.1",
+    "ava": "^0.17.0",
+    "eslint": "^3.11.1",
     "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-node": "^3.0.3",
-    "eslint-plugin-promise": "^3.3.1",
+    "eslint-plugin-node": "^3.0.5",
+    "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "fixpack": "^2.3.1",
-    "flow-bin": "^0.34.0",
-    "nyc": "^8.3.0",
+    "flow-bin": "^0.36.0",
+    "nyc": "^10.0.0",
     "proxyquire": "^1.7.10",
-    "remark-cli": "^2.0.0",
-    "remark-lint": "^5.1.0",
+    "remark-cli": "^2.1.0",
+    "remark-lint": "^5.2.0",
     "remark-preset-lint-recommended": "^1.0.0"
   },
   "engines": {
