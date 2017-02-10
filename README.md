@@ -1,5 +1,7 @@
 # bm-service-settings [![Travis CI Status](https://travis-ci.org/blinkmobile/bm-service-settings.svg?branch=master)](https://travis-ci.org/blinkmobile/bm-service-settings)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/blinkmobile/bm-service-settings.svg)](https://greenkeeper.io/)
+
 Provides settings for BlinkMobile services.
 
 ## Web Service API
