@@ -18,5 +18,5 @@ module.exports.get = function get (
   request /* : BmRequest */
 ) /* : Promise<any> */ {
   return authenticate(request.headers.authorization || '')
-    .then((data) => settings(request.url.query))
+    .then((data) => settings(console, request.url.query))
 }

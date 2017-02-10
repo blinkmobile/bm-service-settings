@@ -1,3 +1,4 @@
+/* @flow */
 'use strict'
 
 const test = require('ava')
@@ -9,7 +10,7 @@ const lib = require('../../lib/authenticate.js')
 test('Should throw Boom error if environment variables are not set', (t) => {
   t.plan(1)
   try {
-    lib()
+    lib('')
   } catch (err) {
     t.deepEqual(err, Boom.badImplementation('JWT_AUDIENCE environment variable is mandatory'))
   }
@@ -33,14 +34,12 @@ test('Should resolve with payload', (t) => {
   process.env.JWT_SECRET = 'this is my secret'
   const secret = new Buffer(process.env.JWT_SECRET, 'base64') // eslint-disable-line node/no-deprecated-api
   const token = jwt.sign({
-    foo: 'bar',
     aud: process.env.JWT_AUDIENCE,
     iss: process.env.JWT_ISSUER
   }, secret)
 
   return lib(`Bearer ${token}`)
     .then((payload) => {
-      t.is(payload.foo, 'bar')
       t.is(payload.aud, process.env.JWT_AUDIENCE)
       t.is(payload.iss, process.env.JWT_ISSUER)
     })
