@@ -24,7 +24,7 @@
     "flow-bin": "^0.38.0",
     "nyc": "^10.1.2",
     "proxyquire": "^1.7.11",
-    "remark-cli": "^2.1.0",
+    "remark-cli": "^3.0.0",
     "remark-lint": "^5.4.0",
     "remark-preset-lint-recommended": "^1.0.0"
   },
