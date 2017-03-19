@@ -21,7 +21,7 @@
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.1",
     "fixpack": "^2.3.1",
-    "flow-bin": "^0.41.0",
+    "flow-bin": "^0.42.0",
     "nyc": "^10.1.2",
     "proxyquire": "^1.7.11",
     "remark-cli": "^3.0.0",
