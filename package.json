@@ -16,7 +16,8 @@
   "devDependencies": {
     "ava": "^0.18.1",
     "eslint": "^3.15.0",
-    "eslint-config-standard": "^7.0.0",
+    "eslint-config-standard": "^10.0.0",
+    "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.0.1",
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^3.0.0",
@@ -38,6 +39,7 @@
   "homepage": "https://github.com/blinkmobile/bm-service-settings#readme",
   "keywords": [],
   "license": "MIT",
+  "main": "types.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blinkmobile/bm-service-settings.git"
@@ -49,7 +51,8 @@
     "flow_check": "flow check",
     "lint-md": "remark . --use remark-preset-lint-recommended",
     "nyc": "nyc check-coverage",
-    "posttest": "npm run eslint && npm run flow_check && npm run fixpack && npm run lint-md",
+    "posttest": "npm run eslint && npm run flow_check && npm run lint-md",
+    "pretest": "npm run fixpack",
     "test": "npm run ava"
   }
 }
