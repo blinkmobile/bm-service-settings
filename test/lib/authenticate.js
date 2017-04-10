@@ -49,11 +49,10 @@ test('Should reject if secret is incorrect', (t) => {
   process.env.JWT_AUDIENCE = 'this is my audience'
   process.env.JWT_ISSUER = 'this is my issuer'
   process.env.JWT_SECRET = 'this is the wrong secret'
-  const secret = new Buffer(process.env.JWT_SECRET, 'base64') // eslint-disable-line node/no-deprecated-api
   const token = jwt.sign({
     aud: process.env.JWT_AUDIENCE,
     iss: process.env.JWT_ISSUER
-  }, secret)
+  }, 'this is my secret')
 
   return lib(`Bearer ${token}`)
     .catch((err) => t.deepEqual(err.output.payload.attributes, {
