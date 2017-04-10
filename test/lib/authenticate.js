@@ -32,7 +32,7 @@ test('Should resolve with payload', (t) => {
   process.env.JWT_AUDIENCE = 'this is my audience'
   process.env.JWT_ISSUER = 'this is my issuer'
   process.env.JWT_SECRET = 'this is my secret'
-  const secret = new Buffer(process.env.JWT_SECRET, 'base64') // eslint-disable-line node/no-deprecated-api
+  const secret = Buffer.from(process.env.JWT_SECRET, 'base64')
   const token = jwt.sign({
     aud: process.env.JWT_AUDIENCE,
     iss: process.env.JWT_ISSUER
@@ -49,11 +49,10 @@ test('Should reject if secret is incorrect', (t) => {
   process.env.JWT_AUDIENCE = 'this is my audience'
   process.env.JWT_ISSUER = 'this is my issuer'
   process.env.JWT_SECRET = 'this is the wrong secret'
-  const secret = new Buffer(process.env.JWT_SECRET, 'base64') // eslint-disable-line node/no-deprecated-api
   const token = jwt.sign({
     aud: process.env.JWT_AUDIENCE,
     iss: process.env.JWT_ISSUER
-  }, secret)
+  }, 'this is my secret')
 
   return lib(`Bearer ${token}`)
     .catch((err) => t.deepEqual(err.output.payload.attributes, {
@@ -67,7 +66,7 @@ test('Should reject if audience is incorrect', (t) => {
   process.env.JWT_AUDIENCE = 'this is my audience'
   process.env.JWT_ISSUER = 'this is my issuer'
   process.env.JWT_SECRET = 'this is my secret'
-  const secret = new Buffer(process.env.JWT_SECRET, 'base64') // eslint-disable-line node/no-deprecated-api
+  const secret = Buffer.from(process.env.JWT_SECRET, 'base64')
   const token = jwt.sign({
     aud: 'incorrect audience',
     iss: process.env.JWT_ISSUER
@@ -85,7 +84,7 @@ test('Should reject if issuer is incorrect', (t) => {
   process.env.JWT_AUDIENCE = 'this is my audience'
   process.env.JWT_ISSUER = 'this is my issuer'
   process.env.JWT_SECRET = 'this is my secret'
-  const secret = new Buffer(process.env.JWT_SECRET, 'base64') // eslint-disable-line node/no-deprecated-api
+  const secret = Buffer.from(process.env.JWT_SECRET, 'base64')
   const token = jwt.sign({
     aud: process.env.JWT_AUDIENCE,
     iss: 'incorrect issuer'
