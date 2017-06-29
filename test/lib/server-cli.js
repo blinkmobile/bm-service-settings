@@ -78,7 +78,7 @@ test('Should reject with correct Boom error if request.get() does not return a s
   })
 
   return lib(logger, PROJECT_NAME)
-    .catch((err) => t.deepEqual(err, Boom.notFound('missing')))
+    .catch((err) => t.deepEqual(err, Boom.create(404, 'missing')))
 })
 
 test('Should reject with correct not found Boom error if request.get() does not return a single project', (t) => {
