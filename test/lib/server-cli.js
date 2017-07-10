@@ -44,7 +44,7 @@ test('Should pass correct arguments to request.get() and resolve to settings', (
   const lib = getTestSubject({
     'request': {
       get: (url, data, cb) => {
-        t.is(url, `${process.env.PROJECT_REGISTRY_ORIGIN || ''}/v1/projects?filter={"attributes.name":"${PROJECT_NAME || ''}"}&include=service`)
+        t.is(url, `${process.env.PROJECT_REGISTRY_ORIGIN || ''}/v1/projects/${PROJECT_NAME || ''}?include=service`)
         cb(null, {statusCode: 200}, JSON_API_PROJECT)
       }
     }
@@ -78,18 +78,6 @@ test('Should reject with correct Boom error if request.get() does not return a s
   })
 
   return lib(logger, PROJECT_NAME)
-    .catch((err) => t.deepEqual(err, Boom.create(404, 'missing')))
-})
-
-test('Should reject with correct not found Boom error if request.get() does not return a single project', (t) => {
-  t.plan(1)
-  const lib = getTestSubject({
-    'request': {
-      get: (url, data, cb) => cb(null, {statusCode: 200}, {data: []})
-    }
-  })
-
-  return lib(logger, PROJECT_NAME)
     .catch((err) => t.deepEqual(err, Boom.notFound(`Could not find project: ${PROJECT_NAME}`)))
 })
 
@@ -98,15 +86,13 @@ test('Should reject with correct not found Boom error if request.get() does not 
   const lib = getTestSubject({
     'request': {
       get: (url, data, cb) => cb(null, {statusCode: 200}, {
-        data: [
-          {
-            'id': '10',
-            'type': 'projects',
-            'attributes': {
-              'name': 'bm-service-settings.api.blinkm.io'
-            }
+        data: {
+          'id': '10',
+          'type': 'projects',
+          'attributes': {
+            'name': 'bm-service-settings.api.blinkm.io'
           }
-        ]
+        }
       })
     }
   })
