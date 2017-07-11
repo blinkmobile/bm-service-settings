@@ -1,7 +1,7 @@
 {
   "name": "bm-service-settings",
   "description": "Provides settings for BlinkMobile services.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Matt Carroll <matt@blinkmobile.com.au> (https://github.com/mymattcarroll)",
   "bugs": {
     "url": "https://github.com/blinkmobile/bm-service-settings/issues"
